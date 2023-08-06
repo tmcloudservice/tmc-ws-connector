@@ -1,13 +1,13 @@
 package com.tmc.websocket.connector.tmcwsconnector.message;
 
-public class Greeting {
+public class HandleMessage {
 
     private String content;
 
-    public Greeting() {
+    public HandleMessage() {
     }
 
-    public Greeting(String content) {
+    public HandleMessage(String content) {
         this.content = content;
     }
 

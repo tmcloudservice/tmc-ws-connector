@@ -42,10 +42,13 @@ function disconnect() {
 }
 
 function sendName() {
-    stompClient.publish({
-        destination: "/test/ws",
-        body: JSON.stringify({'name': $("#name").val()})
-    });
+for (let index = 0; index < 10000; index++) {
+        console.log("index"+ index);
+        stompClient.publish({
+            destination: "/test/ws",
+            body: JSON.stringify({'name': $("#name").val()})
+        });
+     }
 }
 
 function showGreeting(message) {

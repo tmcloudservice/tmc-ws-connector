@@ -36,6 +36,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     // the performance to become slower than usual which is the best case ?)
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
+        registry.addEndpoint("/gs-guide-websocket");
         TMCWSConnectorProjectsEnum tmcwsConnectorProjectsEnum = new TMCWSConnectorProjectsEnum();
         for (int i = 0; i < tmcwsConnectorProjectsEnum.getAllProjectNames().size(); i++) {
             registry.addEndpoint("/gs-guide-websocket/"+ tmcwsConnectorProjectsEnum.getAllProjectNames().get(i));
