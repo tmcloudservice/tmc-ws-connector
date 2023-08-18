@@ -21,7 +21,12 @@ public class GreetingController {
         if (stmompClientCouter > 5){
             stmompClientCouter = 0;
             System.out.println("Enter into if statement");
+       ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
+
+
+        TMCThreadPool tmcThreadPool = applicationContext.getBean(TMCThreadPool.class);
+        System.out.println(tmcThreadPool.getTmcThreadPool());
             Thread t1 = new Thread(new ThreadPoolHandleMessage(message));
             t1.start();
             startThreadMonitor(Thread.currentThread());
